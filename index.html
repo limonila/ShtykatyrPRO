@@ -3,22 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Градиент — Детейлинг Авто в Симферополе</title>
-    <meta name="description" content="Профессиональная студия детейлинга в Симферополе. Химчистка салона, полировка кузова, защитные покрытия. Премиальная химия. Подарок — детейлинг-мойка!">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2300d2ff'/><stop offset='1' stop-color='%233a7bd5'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23g)'/><text x='50' y='72' font-family='Arial,sans-serif' font-size='64' font-weight='bold' fill='white' text-anchor='middle'>Г</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Машинная штукатурка - Профессиональные услуги</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #00d2ff;
-            --accent-gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-            --bg-light: #f4f7f6;
-            --text-dark: #333;
-            --text-light: #fff;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -26,886 +13,607 @@
         }
 
         body {
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
+            color: #333;
         }
 
-        /* --- Верхняя панель --- */
-        .topbar {
-            position: absolute;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 40px;
-            background: rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 15px 0;
         }
 
-        .topbar-logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
+        .logo h1 {
+            font-size: 24px;
+            color: #2c5aa0;
+            margin-bottom: 2px;
+        }
+
+        .logo span {
+            font-size: 12px;
+            color: #666;
             text-transform: uppercase;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
         }
 
-        .topbar-nav {
+        .nav ul {
             display: flex;
-            gap: 28px;
+            list-style: none;
+            gap: 30px;
         }
 
-        .topbar-nav a {
-            color: #fff;
+        .nav a {
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            opacity: 0.85;
-            transition: opacity 0.3s, color 0.3s;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .topbar-nav a:hover {
-            opacity: 1;
-            color: var(--accent);
+        .nav a:hover {
+            color: #2c5aa0;
         }
 
-        .topbar-phone {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            border: 1px solid rgba(0, 210, 255, 0.5);
-            padding: 8px 18px;
-            border-radius: 50px;
-            transition: background 0.3s;
-        }
-
-        .topbar-phone:hover {
-            background: var(--accent);
-        }
-
-        /* --- Header / Hero Section (лёгкий CSS-фон) --- */
-        header {
-            background:
-                radial-gradient(ellipse at 20% 30%, rgba(0, 210, 255, 0.18) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 70%, rgba(58, 123, 213, 0.20) 0%, transparent 55%),
-                linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #1a3a4a 100%);
-            min-height: 100vh;
+        .contact-info {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            color: var(--text-light);
-            padding: 140px 20px 80px;
-            position: relative;
-            overflow: hidden;
+            gap: 20px;
         }
 
-        /* Декоративный силуэт машины на фоне (чистый SVG, 0 запросов) */
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            height: 240px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 240' preserveAspectRatio='none'%3E%3Cpath fill='%2300d2ff' fill-opacity='0.05' d='M0,200 L180,200 C220,200 240,160 300,160 L420,160 C460,120 560,90 720,90 C880,90 980,120 1020,160 L1140,160 C1200,160 1220,200 1260,200 L1440,200 L1440,240 L0,240 Z'/%3E%3C/svg%3E");
-            background-size: cover;
-            background-position: bottom;
-            pointer-events: none;
+        .phone {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s;
         }
 
-        .hero-badge-top {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 50px;
-            background: rgba(0, 210, 255, 0.12);
-            border: 1px solid rgba(0, 210, 255, 0.4);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            animation: fadeInDown 0.8s ease;
-            position: relative;
-            z-index: 1;
+        .phone:hover {
+            color: #2c5aa0;
         }
 
-        .logo {
-            font-size: 5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-bottom: 10px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeInDown 1s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title {
-            font-size: 1.7rem;
-            font-weight: 600;
-            max-width: 800px;
-            margin-bottom: 18px;
-            line-height: 1.35;
-            animation: fadeInUp 1s ease 0.2s both;
-            position: relative;
-            z-index: 1;
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            font-weight: 400;
-            margin-bottom: 25px;
-            opacity: 0.85;
-            animation: fadeInUp 1s ease 0.3s both;
-            max-width: 680px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 35px;
-            animation: fadeInUp 1s ease 0.45s both;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(0, 210, 255, 0.5);
-            backdrop-filter: blur(6px);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content > p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 50px;
-            animation: fadeInUp 1s ease 0.6s both;
-            position: relative;
-            z-index: 1;
+            gap: 20px;
+            margin-bottom: 60px;
         }
 
-        .btn-main {
-            display: inline-block;
+        .btn-primary, .btn-secondary {
             padding: 15px 40px;
-            background: var(--accent-gradient);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
             cursor: pointer;
+            transition: all 0.3s;
             border: none;
         }
 
-        .btn-main:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+        .btn-primary {
+            background: #ff6b6b;
+            color: #fff;
         }
 
-        .btn-outline {
-            display: inline-block;
-            padding: 15px 40px;
+        .btn-primary:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
             background: transparent;
             color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            border: 2px solid rgba(255,255,255,0.6);
-            transition: all 0.3s;
-            cursor: pointer;
+            border: 2px solid #fff;
         }
 
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-3px);
+        .btn-secondary:hover {
+            background: #fff;
+            color: #667eea;
         }
 
-        /* --- Статистика --- */
-        .hero-stats {
+        .hero-features {
             display: flex;
-            gap: 60px;
-            flex-wrap: wrap;
             justify-content: center;
-            animation: fadeInUp 1s ease 0.8s both;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            position: relative;
-            z-index: 1;
+            gap: 60px;
+            margin-top: 40px;
         }
 
-        .stat {
-            text-align: center;
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .stat-num {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .feature-icon {
+            font-size: 40px;
         }
 
-        .stat-label {
-            font-size: 0.85rem;
-            opacity: 0.75;
-            margin-top: 4px;
+        .feature h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
         }
 
-        /* --- Services Section --- */
+        .feature p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Services Section */
         .services {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 80px 0;
+            background: #f8f9fa;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            position: relative;
-            color: var(--primary);
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-gradient);
-            margin: 15px auto 0;
-            border-radius: 2px;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c5aa0;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
             background: #fff;
-            border-radius: 20px;
-            padding: 30px 22px;
+            padding: 40px 30px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid transparent;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-bottom: 4px solid var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .service-icon {
-            font-size: 2.6rem;
-            margin-bottom: 15px;
-            display: inline-block;
+            font-size: 48px;
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 12px;
-            color: var(--primary);
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
         }
 
         .price {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5aa0;
         }
 
-        .service-desc {
-            color: #666;
-            font-size: 0.88rem;
-            margin-bottom: 20px;
-            flex-grow: 1;
+        /* Advantages Section */
+        .advantages {
+            padding: 80px 0;
         }
 
-        .btn-service {
-            display: inline-block;
-            padding: 10px 22px;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            background: transparent;
-            cursor: pointer;
-            margin-top: auto;
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
         }
 
-        .btn-service:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        /* --- Химчистка подробно --- */
-        .detail-block {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .detail-header {
+        .advantage {
             text-align: center;
-            margin-bottom: 50px;
         }
 
-        .detail-header h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
+        .advantage-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin-bottom: 20px;
+        }
+
+        .advantage h3 {
+            font-size: 20px;
             margin-bottom: 15px;
         }
 
-        .detail-header p {
+        .advantage p {
             color: #666;
-            font-size: 1.05rem;
-            max-width: 800px;
-            margin: 0 auto;
+            line-height: 1.6;
         }
 
-        .steps {
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 22px;
+            gap: 30px;
         }
 
-        .step {
+        .portfolio-item {
             background: #fff;
-            border-radius: 16px;
-            padding: 24px 24px 24px 70px;
-            position: relative;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
-        .step:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+        .portfolio-item:hover {
+            transform: translateY(-5px);
         }
 
-        .step-icon {
-            position: absolute;
-            left: 20px;
-            top: 24px;
-            font-size: 1.8rem;
-            line-height: 1;
+        .portfolio-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
         }
 
-        .step h4 {
-            font-size: 1.05rem;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .gift-banner {
-            margin-top: 40px;
-            background: var(--accent-gradient);
-            color: #fff;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 14px 34px rgba(0, 210, 255, 0.35);
-        }
-
-        .gift-banner h3 {
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-        }
-
-        .gift-banner p {
-            opacity: 0.95;
-            font-size: 1rem;
-        }
-
-        /* --- Почему мы --- */
-        .why-us {
-            background: var(--primary);
-            color: #fff;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .why-us .section-title {
-            color: #fff;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .feature-item {
-            max-width: 250px;
+        .portfolio-info {
             padding: 20px;
         }
 
-        .feature-item h4 {
-            font-size: 1.2rem;
+        .portfolio-info h3 {
+            font-size: 20px;
             margin-bottom: 10px;
-            color: var(--accent);
         }
 
-        .feature-item p {
-            font-size: 0.9rem;
+        .portfolio-info p {
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-info-block h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #2c5aa0;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+        }
+
+        .contact-item p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #2c5aa0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
             opacity: 0.8;
         }
 
-        /* --- Footer --- */
-        footer {
-            background: #1a252f;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.6;
-            font-size: 0.9rem;
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .contact-info a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* --- Модальное окно записи --- */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(5px);
+        .footer-links {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-            z-index: 100;
+            gap: 30px;
         }
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal {
-            background: #fff;
-            border-radius: 24px;
-            max-width: 440px;
-            width: 100%;
-            padding: 45px 35px 35px;
-            text-align: center;
-            position: relative;
-            transform: translateY(30px) scale(0.96);
-            transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
-            overflow: hidden;
-        }
-
-        .modal-overlay.active .modal {
-            transform: translateY(0) scale(1);
-        }
-
-        .modal::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: var(--accent-gradient);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 14px;
-            right: 18px;
-            background: none;
-            border: none;
-            font-size: 1.6rem;
-            line-height: 1;
-            color: #999;
-            cursor: pointer;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .modal-close:hover {
-            color: var(--primary);
-            transform: rotate(90deg);
-        }
-
-        .modal-icon {
-            font-size: 3rem;
-            margin-bottom: 12px;
-            display: inline-block;
-            animation: ring 1.2s ease infinite;
-            transform-origin: top center;
-        }
-
-        .modal h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .modal-slogan {
-            font-size: 0.95rem;
-            color: #777;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        .modal-phone {
-            display: inline-block;
-            font-size: 1.9rem;
-            font-weight: 800;
-            text-decoration: none;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-        }
-
-        .modal-phone:hover {
-            opacity: 0.85;
-        }
-
-        .modal-hours {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 25px;
-        }
-
-        .modal-call-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background: var(--accent-gradient);
+        .footer-links a {
             color: #fff;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0.8;
+            transition: opacity 0.3s;
         }
 
-        .modal-call-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 26px rgba(0, 210, 255, 0.55);
+        .footer-links a:hover {
+            opacity: 1;
         }
 
-        @keyframes ring {
-            0%, 100% { transform: rotate(0); }
-            10% { transform: rotate(14deg); }
-            20% { transform: rotate(-12deg); }
-            30% { transform: rotate(10deg); }
-            40% { transform: rotate(-8deg); }
-            50% { transform: rotate(0); }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Adaptive --- */
+        /* Responsive */
         @media (max-width: 768px) {
-            .topbar { padding: 14px 18px; }
-            .topbar-nav { display: none; }
-            .logo { font-size: 2.8rem; letter-spacing: 3px; }
-            header { min-height: auto; padding: 120px 20px 60px; }
-            .hero-title { font-size: 1.25rem; }
-            .tagline { font-size: 0.95rem; }
-            .section-title { font-size: 2rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-card { padding: 25px 20px; }
-            .service-card h3 { min-height: auto; }
-            .detail-header h2 { font-size: 1.7rem; }
-            .steps { grid-template-columns: 1fr; }
-            .hero-stats { gap: 35px; }
-            .stat-num { font-size: 1.7rem; }
-            .btn-main, .btn-outline { padding: 13px 28px; font-size: 0.9rem; }
-            .modal { padding: 40px 25px 30px; }
-            .modal-phone { font-size: 1.5rem; }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-content h2 {
+                font-size: 32px;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Верхняя панель -->
-    <div class="topbar">
-        <div class="topbar-logo">Градиент</div>
-        <nav class="topbar-nav">
-            <a href="#services">Услуги</a>
-            <a href="#himchistka">Химчистка</a>
-            <a href="#why">Почему мы</a>
-        </nav>
-        <a href="tel:+79990000000" class="topbar-phone">+7 (999) 000-00-00</a>
-    </div>
-
-    <!-- Шапка -->
-    <header>
-        <span class="hero-badge-top">💎 Профессиональная студия детейлинга в Симферополе</span>
-        <h1 class="logo">Градиент</h1>
-        <h2 class="hero-title">Полный комплекс услуг по уходу за вашим автомобилем 🏎️</h2>
-        <p class="tagline">Выполняем химчистку салона, полировку кузова, защитные покрытия и предпродажную подготовку. Используем только премиальную химию, которая не повредит покрытие вашего авто.</p>
-        <div class="hero-badges">
-            <span class="hero-badge">Премиальная химия</span>
-            <span class="hero-badge">Центр Симферополя</span>
-            <span class="hero-badge">Подарок к химчистке</span>
-        </div>
-        <div class="hero-buttons">
-            <button class="btn-main" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Наши услуги</button>
-            <button class="btn-outline" onclick="openModal()">Записаться</button>
-        </div>
-
-        <div class="hero-stats">
-            <div class="stat">
-                <div class="stat-num">5+</div>
-                <div class="stat-label">лет опыта</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num">9</div>
-                <div class="stat-label">видов услуг</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num">100%</div>
-                <div class="stat-label">гарантия качества</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num">🎁</div>
-                <div class="stat-label">мойка в подарок</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>ШтукатурPRO</h1>
+                    <span>машинная штукатурка</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#advantages">Преимущества</a></li>
+                        <li><a href="#portfolio">Портфолио</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="contact-info">
+                    <a href="tel:+79001234567" class="phone">+7 (900) 123-45-67</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Услуги -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Профессиональная машинная штукатурка</h2>
+                <p>Качественная отделка стен в кратчайшие сроки по доступным ценам</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Рассчитать стоимость</button>
+                    <button class="btn-secondary">Наши работы</button>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">✨</span>
+                        <div>
+                            <h3>Качественно</h3>
+                            <p>Идеальная поверхность</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
     <section id="services" class="services">
-        <h2 class="section-title">Наши услуги</h2>
-        <div class="services-grid">
-
-            <div class="service-card">
-                <div class="service-icon">🧼</div>
-                <h3>Автохимчистка</h3>
-                <div class="price">от 2 000 ₽</div>
-                <p class="service-desc">Глубокая очистка салона и кузова от загрязнений. Используем профессиональные средства.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🦠</div>
-                <h3>Антибактериальная обработка</h3>
-                <div class="price">от 1 000 ₽</div>
-                <p class="service-desc">Уничтожение бактерий и вирусов. Удаление неприятных запахов в салоне.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">✨</div>
-                <h3>Детейлинг</h3>
-                <div class="price">от 3 000 ₽</div>
-                <p class="service-desc">Комплексный уход за кузовом и салоном. Полировка, нанесение защитных покрытий.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🚗</div>
-                <h3>Предпродажная подготовка</h3>
-                <div class="price">от 3 000 ₽</div>
-                <p class="service-desc">Приведение авто в идеальный вид для продажи. Полная мойка и химчистка.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🪞</div>
-                <h3>Абразивная полировка кузова</h3>
-                <div class="price">от 3 000 ₽</div>
-                <p class="service-desc">Удаление царапин, потёртостей и следов эксплуатации. Восстановление глубины цвета.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">💧</div>
-                <h3>Мойка авто</h3>
-                <div class="price">от 1 500 ₽</div>
-                <p class="service-desc">Бесконтактная и контактная мойка кузова с использованием мягких шампуней.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🛡️</div>
-                <h3>Нанесение защитного покрытия</h3>
-                <div class="price">от 1 000 ₽</div>
-                <p class="service-desc">Нанесение воска, керамики или жидкого стекла для защиты кузова от внешних воздействий.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🔦</div>
-                <h3>Полировка</h3>
-                <div class="price">от 3 000 ₽</div>
-                <p class="service-desc">Мягкая полировка для придания блеска и устранения мелких дефектов лакокрасочного покрытия.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">💡</div>
-                <h3>Полировка фар</h3>
-                <div class="price">от 2 000 ₽</div>
-                <p class="service-desc">Восстановление прозрачности фар, удаление желтизны и микроцарапин. Улучшение света.</p>
-                <button class="btn-service" onclick="openModal()">Записаться</button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Подробно о химчистке -->
-    <section id="himchistka" class="detail-block">
-        <div class="detail-header">
-            <h2>🧼 Что включает в себя химчистка салона</h2>
-            <p>Поэтапная профессиональная обработка всех поверхностей салона — от сухой уборки до финишной защиты материалов.</p>
-        </div>
-
-        <div class="steps">
-            <div class="step">
-                <span class="step-icon">🧹</span>
-                <h4>Сухая уборка</h4>
-                <p>Тщательная очистка пылесосом всех поверхностей, включая сиденья, пол, воздуховоды и щели.</p>
-            </div>
-
-            <div class="step">
-                <span class="step-icon">💦</span>
-                <h4>Влажная уборка</h4>
-                <p>Обработка кожи, ткани и пластика с использованием специализированных очистителей, кистей и микрофибры.</p>
-            </div>
-
-            <div class="step">
-                <span class="step-icon">🪥</span>
-                <h4>Глубокая проработка труднодоступных зон</h4>
-                <p>Очистка стыков, швов, дефлекторов, дверных карт и центральной консоли.</p>
-            </div>
-
-            <div class="step">
-                <span class="step-icon">🚿</span>
-                <h4>Тщательная чистка экстрактором</h4>
-                <p>Детальная проработка всех текстильных поверхностей.</p>
-            </div>
-
-            <div class="step">
-                <span class="step-icon">🫟</span>
-                <h4>Локальная обработка сложных пятен</h4>
-                <p>Стойкие пятна от еды, напитков и косметики точечно обрабатываем специальными пятновыводителями.</p>
-            </div>
-
-            <div class="step">
-                <span class="step-icon">✨</span>
-                <h4>Финишная обработка</h4>
-                <p>Наносим защитные составы: кондиционеры для кожи, полироли для пластика, консервация текстиля и пластика.</p>
-            </div>
-        </div>
-
-        <div class="gift-banner">
-            <h3>🎁 Подарок к химчистке салона</h3>
-            <p>Трёхфазная детейлинг-мойка кузова — бесплатно при заказе комплексной химчистки!</p>
-        </div>
-    </section>
-
-    <!-- Почему мы -->
-    <section id="why" class="why-us">
-        <h2 class="section-title">Почему выбирают нас</h2>
-        <div class="features">
-            <div class="feature-item">
-                <h4>Опытные мастера</h4>
-                <p>Наши специалисты имеют опыт работы более 5 лет.</p>
-            </div>
-            <div class="feature-item">
-                <h4>Премиальная химия</h4>
-                <p>Используем только сертифицированные материалы, которые не повредят покрытие вашего авто.</p>
-            </div>
-            <div class="feature-item">
-                <h4>Гарантия качества</h4>
-                <p>Уверены в результате и даём гарантию на все виды услуг.</p>
-            </div>
-            <div class="feature-item">
-                <h4>Удобное расположение</h4>
-                <p>Находимся в центре Симферополя, район ТРЦ «Лоцман», пер. Гренажный, 31Г.</p>
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Штукатурка квартир</h3>
+                    <p>Комплексная отделка стен в жилых помещениях любой сложности</p>
+                    <div class="price">от 350 руб/м²</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Штукатурка домов</h3>
+                    <p>Качественная отделка стен в частных домах и коттеджах</p>
+                    <div class="price">от 300 руб/м²</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Подвал -->
-    <footer>
-        <div class="contact-info">
-            <p>Запись по телефону: <a href="tel:+79990000000">+7 (999) 000-00-00</a></p>
-            <p>📍 г. Симферополь, пер. Гренажный, 31Г (район ТРЦ «Лоцман»)</p>
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage">
+                    <div class="advantage-number">01</div>
+                    <h3>Современное оборудование</h3>
+                    <p>Используем профессиональные штукатурные станции ведущих производителей</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-number">02</div>
+                    <h3>Опытные мастера</h3>
+                    <p>Наши специалисты имеют опыт работы более 10 лет</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-number">03</div>
+                    <h3>Гарантия качества</h3>
+                    <p>Предоставляем гарантию на все виды выполненных работ</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-number">04</div>
+                    <h3>Соблюдение сроков</h3>
+                    <p>Выполняем работы точно в оговоренные сроки</p>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2024 Детейлинг-центр «Градиент» в Симферополе. Все права защищены.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Наши работы</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="portfolio-info">
+                        <h3>Квартира 120 м²</h3>
+                        <p>Машинная штукатурка стен</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="portfolio-info">
+                        <h3>Квартира 85 м²</h3>
+                        <p>Штукатурка потолков и стен</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="portfolio-info">
+                        <h3>Загородный дом 200 м²</h3>
+                        <p>Комплексная отделка</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info-block">
+                    <h3>Контакты</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <p>Телефон</p>
+                            <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <p>Email</p>
+                            <a href="mailto:info@shtukaturpro.ru">info@shtukaturpro.ru</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p>Адрес</p>
+                            <p>г. Москва, ул. Строителей, 15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ШтукатурPRO</h3>
+                    <p>Профессиональная машинная штукатурка</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#services">Услуги</a>
+                    <a href="#advantages">Преимущества</a>
+                    <a href="#portfolio">Портфолио</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ШтукатурPRO. Все права защищены.</p>
+            </div>
+        </div>
     </footer>
-
-    <!-- Модальное окно -->
-    <div class="modal-overlay" id="callModal">
-        <div class="modal">
-            <button class="modal-close"
+</body>
+</html>
